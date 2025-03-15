@@ -23,7 +23,7 @@
     <script>
        async function sendAnswer(answer) {
             const numeros = ["351964004643", "351924309432", "351912797801"]; // Lista de números no formato internacional.
-            const mensagem = "Minha resposta para o CP7 é " + answer;
+            const mensagem = "Minha resposta para o CP7 – Igreja de Santa Maria de Alcáçova é " + answer;
 
             for (const numero of numeros) {
                 const linkWhatsApp = `https://api.whatsapp.com/send?phone=${numero}&text=${encodeURIComponent(mensagem)}`;
