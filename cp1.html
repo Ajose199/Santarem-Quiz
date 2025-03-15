@@ -20,16 +20,15 @@
     <button onclick="sendAnswer('1275')">1275</button>
 
     <script>
-        function sendAnswer(answer) {
+        async function sendAnswer(answer) {
             const numeros = ["351964004643", "351924309432"]; // Lista de números no formato internacional.
             const mensagem = "Minha resposta para o CP1 é " + answer;
 
-            numeros.forEach((numero, index) => {
-                setTimeout(() => {
-                    const linkWhatsApp = `https://api.whatsapp.com/send?phone=${numero}&text=${encodeURIComponent(mensagem)}`;
-                    window.open(linkWhatsApp, "_blank");
-                }, index * 2000); // Atraso de 2000ms (2 segundos) entre cada envio
-            });
+            for (const numero of numeros) {
+                const linkWhatsApp = `https://api.whatsapp.com/send?phone=${numero}&text=${encodeURIComponent(mensagem)}`;
+                window.open(linkWhatsApp, "_blank");
+                await new Promise(resolve => setTimeout(resolve, 3000)); // Atraso de 3 segundos entre mensagens
+            }
         }
     </script>
 </body>
