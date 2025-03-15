@@ -17,4 +17,21 @@
     <h2>Quiz</h2>
     <p><strong>Qual é o estilo dominante desta construção?</strong></p>
     <button onclick="sendAnswer('Barroco')">Barroco</button>
-    <button onclick="sendAnswer
+    <button onclick="sendAnswer('Românico')">Românico</button>
+    <button onclick="sendAnswer('Gótico')">Gótico</button>
+    <button onclick="sendAnswer('Manuelino')">Manuelino</button>
+
+    <script>
+        async function sendAnswer(answer) {
+            const numeros = ["351964004643", "351924309432", "351912797801"]; // Lista de números no formato internacional.
+            const mensagem = "Minha resposta para o CP6 é " + answer;
+
+            for (const numero of numeros) {
+                const linkWhatsApp = `https://api.whatsapp.com/send?phone=${numero}&text=${encodeURIComponent(mensagem)}`;
+                window.open(linkWhatsApp, "_blank");
+                await new Promise(resolve => setTimeout(resolve, 3000)); // Atraso de 3 segundos entre mensagens
+            }
+        }
+    </script>
+</body>
+</html>
