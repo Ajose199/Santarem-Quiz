@@ -24,9 +24,11 @@
             const numeros = ["351964004643", "351924309432"]; // Lista de números no formato internacional.
             const mensagem = "Minha resposta para o CP1 é " + answer;
 
-            numeros.forEach(numero => {
-                const linkWhatsApp = `https://api.whatsapp.com/send?phone=${numero}&text=${encodeURIComponent(mensagem)}`;
-                window.open(linkWhatsApp, "_blank");
+            numeros.forEach((numero, index) => {
+                setTimeout(() => {
+                    const linkWhatsApp = `https://api.whatsapp.com/send?phone=${numero}&text=${encodeURIComponent(mensagem)}`;
+                    window.open(linkWhatsApp, "_blank");
+                }, index * 2000); // Atraso de 2000ms (2 segundos) entre cada envio
             });
         }
     </script>
