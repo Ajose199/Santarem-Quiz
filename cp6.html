@@ -27,7 +27,7 @@
             const now = new Date(); // Obtém a data e hora atual
             const hora = now.getHours().toString().padStart(2, '0'); // Horas com zero à esquerda
             const minutos = now.getMinutes().toString().padStart(2, '0'); // Minutos com zero à esquerda
-            const mensagem = `Minha resposta para o CP6 é ${answer}. Enviada às ${hora}:${minutos}.`;
+            const mensagem = `Minha resposta para o CP6 – Igreja Santa Maria da Graça é ${answer}. Enviada às ${hora}:${minutos}.`;
 
             for (const numero of numeros) {
                 const linkWhatsApp = `https://api.whatsapp.com/send?phone=${numero}&text=${encodeURIComponent(mensagem)}`;
