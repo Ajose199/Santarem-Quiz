@@ -27,11 +27,12 @@
             const minutos = now.getMinutes().toString().padStart(2, '0'); // Minutos com zero à esquerda
             const mensagem = `Minha resposta para o CP1 – Igreja de Santa Clara é ${answer}. Enviada às ${hora}:${minutos}.`;
 
-            for (const numero of numeros) {
+       for (const numero of numeros) {
                 const linkWhatsApp = `https://api.whatsapp.com/send?phone=${numero}&text=${encodeURIComponent(mensagem)}`;
                 window.open(linkWhatsApp, "_blank");
                 await new Promise(resolve => setTimeout(resolve, 3000)); // Atraso de 3 segundos entre mensagens
             }
+        }
     </script>
 </body>
 </html>
